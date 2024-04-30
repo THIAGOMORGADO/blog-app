@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator();
 export default function MainStack() {
   return(
     <Stack.Navigator
-      initialRouteName='criarConta'
+      initialRouteName='Login'
       screenOptions={{
         headerShown: false
       }}
