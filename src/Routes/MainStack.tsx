@@ -14,6 +14,9 @@ export default function MainStack() {
   return(
     <Stack.Navigator
       initialRouteName='criarConta'
+      screenOptions={{
+        headerShown: false
+      }}
     >
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="ForgottenPassword" component={ForgottenPassword} />
