@@ -1,11 +1,15 @@
-import { View, Text } from 'react-native'
+import { View, Text, KeyboardAvoidingView, Platform } from 'react-native'
 import React from 'react'
+import {styles} from './styles';
+
+
 import Header from '../../components/Header'
 
 export default function SignIn() {
   return (
     <View>
-      <Header />
+     {/* Estou na tela Home */}
+
     </View>
   )
 }

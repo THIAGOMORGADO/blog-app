@@ -1,29 +1,19 @@
-import { Text, Touchable, TouchableOpacity, View } from 'react-native';
+import { Text, Touchable, TouchableOpacity, View, SafeAreaView, KeyboardAvoidingView, Platform, Alert } from 'react-native';
 import { AntDesign  } from '@expo/vector-icons'
 
 import {styles} from './styles'
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 
-export default function Header() {
-  const [active, setActive] = useState(false)
+type HeaderProps = {
+  children: ReactNode;
+}
+
+import {useNavigation} from '@react-navigation/native'
+export default function Header({children}: HeaderProps) {
+  const [active, setActive] = useState(true)
  return (
-  <View style={styles.headerContainer}>
-  <TouchableOpacity>
-   <AntDesign name="left" size={24} color="#fff" />
-  </TouchableOpacity> 
-   
-    <Text style={styles.titleHeader}>Header</Text>
-
-    { active 
-    ? <TouchableOpacity>
-        <AntDesign name="user" size={24} color="#fff" /> 
-      </TouchableOpacity>
-      
-    : <TouchableOpacity>
-        <AntDesign name="login" size={24} color="#fff" />
-      </TouchableOpacity>
-    }
-    
-  </View>
+  <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.headerContainer}>
+   {children} 
+  </KeyboardAvoidingView>
   );
 }
