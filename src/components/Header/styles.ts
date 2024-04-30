@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
+
 
 export const styles = StyleSheet.create({
   headerContainer: {
@@ -6,10 +7,16 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent:'space-between',
     alignItems: 'center',
+    height: '35%',
     paddingHorizontal: 20,
     paddingVertical: 10,
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10
   },
   titleHeader: {
-    color: '#fff'
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+    
   }
 })
