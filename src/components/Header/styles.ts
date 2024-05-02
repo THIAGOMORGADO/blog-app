@@ -7,11 +7,11 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent:'space-between',
     alignItems: 'center',
-    height: '35%',
+    height:95,
     paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingTop: Platform.OS === 'android'? 10 : 30,
     borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10
+    borderBottomLeftRadius: 10,
   },
   titleHeader: {
     color: '#fff',

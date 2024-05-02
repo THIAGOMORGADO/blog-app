@@ -12,7 +12,7 @@ import {useNavigation} from '@react-navigation/native'
 export default function Header({children}: HeaderProps) {
   const [active, setActive] = useState(true)
  return (
-  <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.headerContainer}>
+  <KeyboardAvoidingView style={styles.headerContainer}>
    {children} 
   </KeyboardAvoidingView>
   );
