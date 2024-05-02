@@ -1,11 +1,12 @@
 import { ActivityIndicator, Image, Text, View } from 'react-native';
 
 import { styles } from './styles'
+import Logo from '../Logo';
 
 export default function SplashScreen() {
  return (
    <View style={styles.container}>
-    <Image source={require('../../assets/pl.png')} style={styles.imgLogo}/>
+   <Logo />
     <Text style={styles.title}>
       Blog Dev
     </Text>
