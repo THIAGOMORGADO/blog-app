@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 export default function MainStack() {
   return(
     <Stack.Navigator
-      initialRouteName='Home'
+      initialRouteName='Login'
       screenOptions={{
         headerShown: false
       }}

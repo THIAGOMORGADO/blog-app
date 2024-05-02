@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import Header from '../../components/Header';
 import {useNavigation} from '@react-navigation/native'
 
-import {styles}  from '../../globals/styles'
+import {GlobalStyles}  from '../../globals/styles'
 import Icon from '../../components/Icon';
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
           color='#fff'
           onPress={alert('toaqui')}
         /> */}
-        <Text style={styles.title}>Home</Text>
+        <Text style={GlobalStyles.title}>Home</Text>
 
        
         <Icon iconName="user" size={20} color='#fff' onPress={handleProfileScreen}/> 
