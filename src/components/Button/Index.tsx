@@ -1,9 +1,18 @@
-import { Text, View } from 'react-native';
+import { AccessibilityInfo, ActivityIndicator, Text, TouchableOpacity, View } from 'react-native';
 
-export default function Button() {
+import {styles} from './styles'
+import { ReactNode, useState } from 'react';
+
+type buttonProps = {
+  onPress?: () => void;
+  children: ReactNode;
+}
+
+export default function Button({ children, onPress } : buttonProps) {
+ 
  return (
-  <View>
-    <Text style={{backgroundColor: 'black', color: '#fff'}}>Button</Text>
-  </View>
+  <TouchableOpacity style={styles.container} onPress={onPress}>
+   {children}
+  </TouchableOpacity>
   );
 }
