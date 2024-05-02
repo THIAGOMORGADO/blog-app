@@ -9,12 +9,23 @@ import { GlobalStyles } from './src/globals/styles';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      
-        <StatusBar barStyle={'light-content'} backgroundColor="#333"/>
-        <MainStack />
-      
-    </NavigationContainer>
+   
+    <NavigationContainer theme={{
+      colors: {
+        background: '#333',
+        primary: '',
+        card: '',
+        text: '',
+        border: '',
+        notification: ''
+      },
+      dark: true
+    }}>
+      <StatusBar barStyle={'light-content'} />
+          <MainStack />
+      </NavigationContainer>
+    
+  
   );
 }
 
