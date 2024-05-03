@@ -1,3 +1,5 @@
+ {/* Reafator para o arvide estilizacao todas as view que stiver estilizacao inline */}
+
 import { 
   View, 
   Text, 
@@ -5,7 +7,8 @@ import {
   Platform, 
   TextInput, 
   ScrollView, 
-  ActivityIndicator 
+  ActivityIndicator,
+  TouchableOpacity
 } from 'react-native'
 import React, { useState } from 'react'
 import {styles} from './styles';
@@ -24,7 +27,7 @@ export default function SignIn() {
   const [pressIn, setPressIn] = useState(false);
   const navigation = useNavigation<any>()
   function goToHomePage() {
-    navigation.navigate('home')
+    navigation.navigate('Home')
   }
 
   const handleLogin = () => {
@@ -64,41 +67,54 @@ export default function SignIn() {
           title="Senha"  
         />
         <Input 
+          style={[styles.input, {color: '#fff'}]}
           placeholder='Digite sua senha'
           placeholderTextColor="#00f000"
+          secureTextEntry
         />
 
         {/* QUnado usuario clicar ele vai ter um efeito sppiner  */}
-        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+        <View style={{alignItems: 'center', justifyContent: 'center', }}>
           <Button onPress={handleLogin}>
           {
              pressIn ? 
-            <View style={{flexDirection: 'row', alignItems: 'center', gap: 10}}>
-              <ActivityIndicator size='small' color='#00f000' />
-                
-              <Text style={styles.btnText}>Logando</Text>
+            <View style={{flexDirection: 'row', alignItems: 'center', gap: 5,}}>
+              <ActivityIndicator size='small' color='green'/>
             </View> :  
             <Text style={styles.btnText}>Login</Text>
           }
           </Button>
         </View>
-
-
-        <View style={{ padding: 10, alignItems: 'center', }}>
+        
+        {/* <View style={{ padding: 10, alignItems: 'center', }}>
           <Text style={{color: '#fff', fontSize: 16, fontWeight: 'bold'}}>Entra com </Text>
           
         </View>
         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', marginTop: 30}}>
           <Icon iconName='google' size={30} color='#fff' onPress={() => {}}/>
           <Icon iconName="apple1" size={30} color="#fff" />
-        </View>
+        </View> */}
+
       </View> 
 
-      <View style={{flexDirection: 'row', gap: 10,  padding: 50, alignContent: 'center', justifyContent: 'center'}}>
-        <Text style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}>Cadastra-se</Text>
-        <Text style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}>Esqueceu a senha</Text>
+      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end',  marginLeft: 20, }}> 
+     
+        <View style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: 10}}>
+          <TouchableOpacity>
+            <Text 
+              style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}
+            >
+            Cadastra-se
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}>Esqueceu a senha</Text>
+          </TouchableOpacity>
+          
+        </View>
+        
       </View>
-      
+
      </ScrollView>
     </KeyboardAvoidingView>
   )
