@@ -12,7 +12,7 @@ export default function ListEmpty() {
         <Text style={styles.title}>Você ainda não tem Skills cadastradas</Text>
         <Text style={styles.subTitle}>Cadastre suas skills no butao abaixo</Text>
 
-        <Button />
+        
       </View>
     </View>
 

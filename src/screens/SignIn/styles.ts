@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     
   },
   formContent: {
+    marginTop: 10,
     marginLeft: 20,
     
     
@@ -27,7 +28,7 @@ export const styles = StyleSheet.create({
   },
   input:{
     backgroundColor: '#222',
-    
+    color: '#fff',
     width: '100%',
     height: 50,
     borderRadius: 10,
