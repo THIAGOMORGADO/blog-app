@@ -17,14 +17,14 @@ import Logo from '../../components/Logo';
 import Button from '../../components/Button/Index';
 import Icon from '../../components/Icon';
 import { useNavigation } from '@react-navigation/native';
+import Title from '../../components/Title';
+import Input from '../../components/Input';
 
 export default function SignIn() {
   const [pressIn, setPressIn] = useState(false);
-  const navigation = useNavigation()
-
-
+  const navigation = useNavigation<any>()
   function goToHomePage() {
-    navigation.navigate('Home')
+    navigation.navigate('home')
   }
 
   const handleLogin = () => {
@@ -42,24 +42,33 @@ export default function SignIn() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
         <Logo />
-        <Text style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}>Blog Dev</Text>
+        <Title 
+          style={[styles.title, {fontSize: 18}] }
+          title="Blog dev"  
+        />
      <ScrollView 
       style={styles.formArea}
       contentContainerStyle={{width: '100%',}}
      >
       <View style={styles.formContent}>
-        <Text style={styles.title}>Email:</Text>
-        <TextInput
-          style={styles.input} 
-          placeholder='Digite seu email'
-          placeholderTextColor="#777"
-        />  
-        <Text style={styles.title}>Senha:</Text>
-        <TextInput 
-          placeholder='Digite a senha'
-          style={styles.input} 
-          placeholderTextColor="#777"
+        <Title 
+          style={styles.title}
+          title="E-mail"  
+        />
+        <Input 
+           placeholder='Digite sua senha'
+           placeholderTextColor="#00f000"
         /> 
+        <Title 
+          style={styles.title}
+          title="Senha"  
+        />
+        <Input 
+          placeholder='Digite sua senha'
+          placeholderTextColor="#00f000"
+        />
+
+        {/* QUnado usuario clicar ele vai ter um efeito sppiner  */}
         <View style={{alignItems: 'center', justifyContent: 'center'}}>
           <Button onPress={handleLogin}>
           {
@@ -73,6 +82,8 @@ export default function SignIn() {
           }
           </Button>
         </View>
+
+
         <View style={{ padding: 10, alignItems: 'center', }}>
           <Text style={{color: '#fff', fontSize: 16, fontWeight: 'bold'}}>Entra com </Text>
           
@@ -82,15 +93,13 @@ export default function SignIn() {
           <Icon iconName="apple1" size={30} color="#fff" />
         </View>
       </View> 
+
       <View style={{flexDirection: 'row', gap: 10,  padding: 50, alignContent: 'center', justifyContent: 'center'}}>
         <Text style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}>Cadastra-se</Text>
         <Text style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}>Esqueceu a senha</Text>
       </View>
+      
      </ScrollView>
-
- 
-     
-    
     </KeyboardAvoidingView>
   )
 }

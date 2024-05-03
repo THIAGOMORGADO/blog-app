@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     color: '#fff',
-    marginTop: 10,
-    marginBottom: 10
+    marginTop: 5,
+    marginBottom: 5
   }
 })
