@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "279436728108",
+    "project_id": "expoauth-a0395",
+    "storage_bucket": "expoauth-a0395.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279436728108:android:c1d8fc37dd127109b17e89",
+        "android_client_info": {
+          "package_name": "com.expoauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279436728108-kg2m3u7snsn9pmdve52cuctj52b571ru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC-PRljR0Rak7SI-9-V6108-7fdEGP8D4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279436728108-kg2m3u7snsn9pmdve52cuctj52b571ru.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "279436728108-th5rgjk5u6q2uhi4fob5jcr8n6uk4bb0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.expoauth"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
