@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
   },
   formContent: {
     marginTop: 10,
-    marginLeft: 20,
+    
     
     
     
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     borderColor: "#00f000",
     borderWidth: 2,
     paddingLeft: 15
-
+  
   },
   btnText: {
     color: '#fff',
@@ -47,5 +47,41 @@ export const styles = StyleSheet.create({
     color: '#fff',
     marginTop: 5,
     marginBottom: 5
+  },
+  socialArea: {
+    marginTop: 20,
+    
+    height: 50,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+  },
+  socialContent:{
+    padding: 10,
+    height: 50,
+  
+    gap: 50,  
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+  },
+  footerContainer:{
+    marginVertical: '10%',
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    justifyContent: 'flex-start',  
+    marginLeft: 20, 
+   
+
+  },
+  footerContent: {
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    flexDirection: 'row', 
+    gap: 10,
+    padding: 20
   }
 })

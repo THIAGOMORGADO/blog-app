@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SignUp() {
   return (
-    <View>
+    <View style={{backgroundColor: 'red', flex: 1}}>
       <Text>SignUp</Text>
     </View>
   )

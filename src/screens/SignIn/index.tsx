@@ -10,9 +10,9 @@ import {
   ActivityIndicator,
   TouchableOpacity
 } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {styles} from './styles';
-
+import { FontAwesome6 } from '@expo/vector-icons'
 
 import Header from '../../components/Header'
 import Logo from '../../components/Logo';
@@ -22,13 +22,14 @@ import Icon from '../../components/Icon';
 import { useNavigation } from '@react-navigation/native';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
+import Buttons from '../../components/Buttons';
 
 export default function SignIn() {
   const [pressIn, setPressIn] = useState(false);
   const navigation = useNavigation<any>()
-  function goToHomePage() {
-    navigation.navigate('Home')
-  }
+  const [post, setPost] = useState<Array<any>>([])
+
+ 
 
   const handleLogin = () => {
     setPressIn(true);
@@ -36,19 +37,34 @@ export default function SignIn() {
       setPressIn(false);
       goToHomePage()
     }, 2000);
+
+  }
+
+  function goToHomePage() {
+    navigation.navigate('Home')
+  }
+
+
+
+  function handlerestPass(): void {
+    navigation.navigate('ForgottenPassword')
+  }
+
+  function handleCreateAccounts(): void {
+    navigation.navigate('criarConta')
+  }
+
+  function handleSignInWithGoogle(): void {
     
   }
- 
+
   return (
     <KeyboardAvoidingView 
       style={styles.container} 
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-        <Logo />
-        <Title 
-          style={[styles.title, {fontSize: 18}] }
-          title="Blog dev"  
-        />
+      <Logo />
+      <Title style={[styles.title, {fontSize: 18}] } title="Blog dev" />
      <ScrollView 
       style={styles.formArea}
       contentContainerStyle={{width: '100%',}}
@@ -74,7 +90,7 @@ export default function SignIn() {
         />
 
         {/* QUnado usuario clicar ele vai ter um efeito sppiner  */}
-        <View style={{alignItems: 'center', justifyContent: 'center', }}>
+        <View style={{alignItems: 'center', justifyContent: 'center',}}>
           <Button onPress={handleLogin}>
           {
              pressIn ? 
@@ -85,36 +101,27 @@ export default function SignIn() {
           }
           </Button>
         </View>
-        
-        {/* <View style={{ padding: 10, alignItems: 'center', }}>
-          <Text style={{color: '#fff', fontSize: 16, fontWeight: 'bold'}}>Entra com </Text>
-          
-        </View>
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', marginTop: 30}}>
-          <Icon iconName='google' size={30} color='#fff' onPress={() => {}}/>
-          <Icon iconName="apple1" size={30} color="#fff" />
-        </View> */}
-
       </View> 
 
-      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end',  marginLeft: 20, }}> 
-     
-        <View style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: 10}}>
-          <TouchableOpacity>
-            <Text 
-              style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}
-            >
-            Cadastra-se
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}>Esqueceu a senha</Text>
-          </TouchableOpacity>
-          
+      <View style={styles.socialArea}>
+        <View style={styles.socialContent}>  
+          <Icon 
+            iconName='logo-google'
+            size={30} 
+            color='#fff'
+            onPress={handleSignInWithGoogle}
+          />
+          <Icon iconName='logo-github' size={30} color='#fff' />
         </View>
-        
-      </View>
+      </View>    
 
+
+      <View style={styles.footerContainer}> 
+        <View style={styles.footerContent}>
+          <Buttons title='Cadastra-se'onPress={handleCreateAccounts} />
+          <Buttons title='Esqueceu a senha' onPress={handlerestPass} />
+        </View>
+      </View>
      </ScrollView>
     </KeyboardAvoidingView>
   )
