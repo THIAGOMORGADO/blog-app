@@ -35,7 +35,7 @@ export default function App() {
       },
       dark: true
     }}>
-      <StatusBar barStyle={'light-content'} />
+      <StatusBar barStyle={'light-content'} backgroundColor='#333' translucent/>
           {/* <MainStack /> */}
           <MainStack />
       </NavigationContainer>

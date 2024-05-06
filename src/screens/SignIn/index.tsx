@@ -12,7 +12,7 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import {styles} from './styles';
-
+import { FontAwesome6 } from '@expo/vector-icons'
 
 import Header from '../../components/Header'
 import Logo from '../../components/Logo';
@@ -23,6 +23,12 @@ import { useNavigation } from '@react-navigation/native';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
 
+import {GoogleSignin} from '@react-native-google-signin/google-signin'
+
+import auth from '@react-native-firebase/auth';
+import AddNewAccounts from '../../components/Buttons';
+import Buttons from '../../components/Buttons';
+
 export default function SignIn() {
   const [pressIn, setPressIn] = useState(false);
   const navigation = useNavigation<any>()
@@ -30,6 +36,7 @@ export default function SignIn() {
     navigation.navigate('Home')
   }
 
+  // Configuracao google
   const handleLogin = () => {
     setPressIn(true);
     setTimeout(() => {
@@ -44,11 +51,8 @@ export default function SignIn() {
       style={styles.container} 
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-        <Logo />
-        <Title 
-          style={[styles.title, {fontSize: 18}] }
-          title="Blog dev"  
-        />
+      <Logo />
+      <Title style={[styles.title, {fontSize: 18}] } title="Blog dev" />
      <ScrollView 
       style={styles.formArea}
       contentContainerStyle={{width: '100%',}}
@@ -74,7 +78,7 @@ export default function SignIn() {
         />
 
         {/* QUnado usuario clicar ele vai ter um efeito sppiner  */}
-        <View style={{alignItems: 'center', justifyContent: 'center', }}>
+        <View style={{alignItems: 'center', justifyContent: 'center',}}>
           <Button onPress={handleLogin}>
           {
              pressIn ? 
@@ -85,36 +89,22 @@ export default function SignIn() {
           }
           </Button>
         </View>
-        
-        {/* <View style={{ padding: 10, alignItems: 'center', }}>
-          <Text style={{color: '#fff', fontSize: 16, fontWeight: 'bold'}}>Entra com </Text>
-          
-        </View>
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', marginTop: 30}}>
-          <Icon iconName='google' size={30} color='#fff' onPress={() => {}}/>
-          <Icon iconName="apple1" size={30} color="#fff" />
-        </View> */}
-
       </View> 
 
-      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end',  marginLeft: 20, }}> 
-     
-        <View style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: 10}}>
-          <TouchableOpacity>
-            <Text 
-              style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}
-            >
-            Cadastra-se
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={{color: '#fff', fontSize: 18, fontWeight:'bold'}}>Esqueceu a senha</Text>
-          </TouchableOpacity>
-          
+      <View style={styles.socialArea}>
+        <View style={styles.socialContent}>  
+          <Icon iconName='google' size={30} color='#fff' />
+          <Icon iconName='github' size={30} color='#fff' />
         </View>
-        
-      </View>
+      </View>    
 
+
+      <View style={styles.footerContainer}> 
+        <View style={styles.footerContent}>
+          <Buttons title='Cadastra-se'/>
+          <Buttons title='Esqueceu a senha'/>
+        </View>
+      </View>
      </ScrollView>
     </KeyboardAvoidingView>
   )
