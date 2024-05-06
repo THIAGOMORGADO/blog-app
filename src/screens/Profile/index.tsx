@@ -7,7 +7,6 @@ import Icon from '../../components/Icon';
 import { styles } from './styles'
 import React, { useState } from 'react';
 import TechLIst from '../../components/TechLIst';
-import TechList from '../../components/TechLIst';
 import ListEmpty from '../../components/ListEmpty';
 import { useNavigation } from '@react-navigation/native';
 
@@ -32,9 +31,9 @@ export default function Profile() {
   <>
   <View style={GlobalStyles.containerGlobal}>
     <Header>
-      <Icon iconName="left" size={20} color='#fff' onPress={handleBackScreen}/>
+      <Icon iconName="arrow-back-circle-outline" size={30} color='green' onPress={handleBackScreen}/>
       <Text style={GlobalStyles.title}>Profile</Text>
-      <Icon iconName="logout" size={20} color='#fff'/>
+      <Icon iconName="log-out-outline" size={30} color='green'/>
      </Header>
 
     <View style={styles.userArea}>
@@ -57,11 +56,11 @@ export default function Profile() {
         <Text style={styles.title}>
           Minha habilidades
         </Text>   
-          <Icon iconName="pluscircle" size={20} color='#00f000' children={undefined} onPress={handleNewSkill}/>
+          <Icon iconName="add-circle" size={30} color='#00f000' children={undefined} onPress={handleNewSkill} />
       </View>
       <View>  
         <FlatList
-          ListEmptyComponent={ListEmpty}
+          ListEmptyComponent={<ListEmpty title='Você ainda não tem Skills cadastradas' subTitle='Cadastre suas skills no butao abaixo'/>}
           showsHorizontalScrollIndicator={false}
           data={myskills}
           horizontal

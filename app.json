@@ -23,12 +23,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.blogapp",
+      "package": "com.blogapp"
+     
       
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": []
+     "plugins": [
+    ]
   }
 }

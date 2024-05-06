@@ -5,11 +5,12 @@ import { Text, Touchable, TouchableOpacity, View } from 'react-native';
 
 type FooterButtonProps = {
   title: string;
+  onPress: () => void;
 }
 
-const Buttons = ({title} : FooterButtonProps) => {
+const Buttons = ({title, onPress} : FooterButtonProps) => {
   return(
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <Text  style={styles.btnText}>{title}</Text>
     </TouchableOpacity>
   );

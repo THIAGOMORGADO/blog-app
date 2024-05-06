@@ -10,7 +10,7 @@ import {
   ActivityIndicator,
   TouchableOpacity
 } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {styles} from './styles';
 import { FontAwesome6 } from '@expo/vector-icons'
 
@@ -22,30 +22,42 @@ import Icon from '../../components/Icon';
 import { useNavigation } from '@react-navigation/native';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
-
-import {GoogleSignin} from '@react-native-google-signin/google-signin'
-
-import auth from '@react-native-firebase/auth';
-import AddNewAccounts from '../../components/Buttons';
 import Buttons from '../../components/Buttons';
 
 export default function SignIn() {
   const [pressIn, setPressIn] = useState(false);
   const navigation = useNavigation<any>()
-  function goToHomePage() {
-    navigation.navigate('Home')
-  }
+  const [post, setPost] = useState<Array<any>>([])
 
-  // Configuracao google
+ 
+
   const handleLogin = () => {
     setPressIn(true);
     setTimeout(() => {
       setPressIn(false);
       goToHomePage()
     }, 2000);
+
+  }
+
+  function goToHomePage() {
+    navigation.navigate('Home')
+  }
+
+
+
+  function handlerestPass(): void {
+    navigation.navigate('ForgottenPassword')
+  }
+
+  function handleCreateAccounts(): void {
+    navigation.navigate('criarConta')
+  }
+
+  function handleSignInWithGoogle(): void {
     
   }
- 
+
   return (
     <KeyboardAvoidingView 
       style={styles.container} 
@@ -93,16 +105,21 @@ export default function SignIn() {
 
       <View style={styles.socialArea}>
         <View style={styles.socialContent}>  
-          <Icon iconName='google' size={30} color='#fff' />
-          <Icon iconName='github' size={30} color='#fff' />
+          <Icon 
+            iconName='logo-google'
+            size={30} 
+            color='#fff'
+            onPress={handleSignInWithGoogle}
+          />
+          <Icon iconName='logo-github' size={30} color='#fff' />
         </View>
       </View>    
 
 
       <View style={styles.footerContainer}> 
         <View style={styles.footerContent}>
-          <Buttons title='Cadastra-se'/>
-          <Buttons title='Esqueceu a senha'/>
+          <Buttons title='Cadastra-se'onPress={handleCreateAccounts} />
+          <Buttons title='Esqueceu a senha' onPress={handlerestPass} />
         </View>
       </View>
      </ScrollView>

@@ -1,6 +1,6 @@
 import { Touchable, TouchableOpacity, View } from 'react-native';
 
-import {AntDesign} from '@expo/vector-icons'
+import {Ionicons} from '@expo/vector-icons'
 import { ReactNode } from 'react';
 
 type IconProps = {
@@ -16,7 +16,7 @@ export default function Icon({ iconName, size, color, onPress, styles, children 
  return (
 
   <TouchableOpacity >
-    <AntDesign 
+    <Ionicons 
       name={iconName}
       size={size}
       color={color}

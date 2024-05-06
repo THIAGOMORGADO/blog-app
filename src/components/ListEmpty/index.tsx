@@ -3,16 +3,19 @@ import {styles} from './styles'
 import Icon from '../Icon';
 import Button from '../Button/Index';
 
-export default function ListEmpty() {
+type ListEmptyProps = {
+  title: string,
+  subTitle?: string,
+}
+
+export default function ListEmpty({title, subTitle} : ListEmptyProps) {
  return (
   
     <View style={styles.emptyAre}>
       <View style={styles.content}>
-        <Icon iconName='codepen' size={35} color='#00f000'/>
-        <Text style={styles.title}>Você ainda não tem Skills cadastradas</Text>
-        <Text style={styles.subTitle}>Cadastre suas skills no butao abaixo</Text>
-
-        
+        <Icon iconName='alert-circle-outline' size={35} color='#00f000'/>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subTitle}>{subTitle}</Text>
       </View>
     </View>
 
