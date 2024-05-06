@@ -18,7 +18,8 @@ export default function Checkout() {
    <View style={styles.container}>
     <View style={styles.content}>
       <Icon iconName='close-circle-sharp' color='green' size={50} />
-      <Title style={styles.textCheck} title="Adiquira ja seu plano pro para ter acesso as vagas na area de dev..." />
+      <Title style={styles.textCheck} 
+      title="Mude hoje mesmo para o Pro e eleve sua carreira na área de desenvolvimento." />
       
       <Buttons 
         title='Adicionar o pagamento' 

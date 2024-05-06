@@ -73,7 +73,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'column', 
     alignItems: 'center', 
     justifyContent: 'flex-start',  
-    marginLeft: 20, 
+   
    
 
   },
@@ -82,6 +82,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center', 
     flexDirection: 'row', 
     gap: 10,
-    padding: 20
+    
   }
 })

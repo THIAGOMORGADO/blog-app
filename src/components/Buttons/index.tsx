@@ -7,9 +7,9 @@ import Icon from '../Icon';
 type FooterButtonProps = {
   title: string;
   onPress: () => void;
-  iconName: string;
-  color: string;
-  size: number;
+  iconName?: any;
+  color?: any ;
+  size?: any;
   style?: StyleProp<ViewStyle>;
 }
 

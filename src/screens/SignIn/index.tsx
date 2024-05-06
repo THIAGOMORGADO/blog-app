@@ -43,7 +43,7 @@ export default function SignIn() {
   }
 
   function goToHomePage() {
-    navigation.navigate('Home')
+    navigation.navigate('TabHome')
   }
 
 
@@ -120,7 +120,7 @@ export default function SignIn() {
 
       <View style={styles.footerContainer}> 
         <View style={styles.footerContent}>
-          <Buttons title='Cadastra-se'onPress={handleCreateAccounts} />
+          <Buttons  title='Cadastra-se' onPress={handleCreateAccounts} />
           <Buttons title='Esqueceu a senha' onPress={handlerestPass} />
         </View>
       </View>

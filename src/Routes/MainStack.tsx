@@ -9,7 +9,8 @@ import SignUp from '../screens/SignUp';
 import Profile from '../screens/Profile';
 import Sucess from '../screens/ForgotenPassword/Sucess';
 import MainTabs from './MainTab';
-import resumePlan from '../screens/Checkout/ResumePlan';
+
+import ResumePlan from '../screens/Checkout/ResumePlan';
 
 
 const Stack = createNativeStackNavigator();
@@ -22,7 +23,7 @@ export default function MainStack() {
         headerShown: false
       }}
     >
-      <Stack.Screen name="Home" component={MainTabs} />
+      <Stack.Screen name="TabHome" component={MainTabs} />
       <Stack.Screen name="ForgottenPassword" component={ForgottenPassword} />
       <Stack.Screen name="success" component={Sucess} />
       <Stack.Screen name="Login" component={SignIn} />
@@ -31,7 +32,7 @@ export default function MainStack() {
 
 
       {/* Rotaas checkout  */}
-      <Stack.Screen name="resume" component={resumePlan} />
+      <Stack.Screen name="resume" component={ResumePlan} />
     </Stack.Navigator>
   )
 }
