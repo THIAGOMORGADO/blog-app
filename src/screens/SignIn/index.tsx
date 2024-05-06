@@ -29,6 +29,8 @@ export default function SignIn() {
   const navigation = useNavigation<any>()
   const [post, setPost] = useState<Array<any>>([])
 
+
+
  
 
   const handleLogin = () => {

@@ -19,5 +19,5 @@ export default function Jobs() {
   };
 
   // Renderização condicional baseada no tipo de usuário
-  return user.type === 'pro' ? <Checkout /> : <ListJobs />;
+  return user.type === 'basic' ? <Checkout /> : <ListJobs />;
 }
