@@ -10,16 +10,37 @@ import { styles } from './styles';
 import NewLetter from '../../components/NewLetter';
 import ListEmpty from '../../components/ListEmpty';
 
+import { useNameContext } from '../../contexts/';
+
 export default function Home() {
   const [logead, setLogead] = useState(false);
   const navigation = useNavigation<any>();
   const [newLetter, setNewLetter] = useState<any>([
-    // {
-    //   id: 1,
-    //   image: 'https://imgs.search.brave.com/NkYJjH1ndaZFN9fTByXUFz6SK5VtCFLFgvF_MvcId_I/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG40/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbG9nb3MtMy82/MDAvUmVhY3QuanNf/bG9nby01MTIucG5n',
-    //   title: 'Full Stack',
-    // },
+    {
+      id: 1,
+      image: 'https://imgs.search.brave.com/NkYJjH1ndaZFN9fTByXUFz6SK5VtCFLFgvF_MvcId_I/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG40/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbG9nb3MtMy82/MDAvUmVhY3QuanNf/bG9nby01MTIucG5n',
+      title: 'Full Stack',
+    },
+    {
+      id: 1,
+      image: 'https://imgs.search.brave.com/NkYJjH1ndaZFN9fTByXUFz6SK5VtCFLFgvF_MvcId_I/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG40/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbG9nb3MtMy82/MDAvUmVhY3QuanNf/bG9nby01MTIucG5n',
+      title: 'Full Stack',
+    },
+    {
+      id: 1,
+      image: 'https://imgs.search.brave.com/NkYJjH1ndaZFN9fTByXUFz6SK5VtCFLFgvF_MvcId_I/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG40/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbG9nb3MtMy82/MDAvUmVhY3QuanNf/bG9nby01MTIucG5n',
+      title: 'Full Stack',
+    },
+    {
+      id: 1,
+      image: 'https://imgs.search.brave.com/NkYJjH1ndaZFN9fTByXUFz6SK5VtCFLFgvF_MvcId_I/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG40/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvbG9nb3MtMy82/MDAvUmVhY3QuanNf/bG9nby01MTIucG5n',
+      title: 'Full Stack',
+    },
   ]);
+  
+  const {  name } = useNameContext();
+
+  console.log(name)
 
   function handleProfileScreen() {
     navigation.navigate('User')

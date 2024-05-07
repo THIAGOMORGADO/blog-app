@@ -4,6 +4,7 @@ import { StatusBar} from 'react-native';
 import {NavigationContainer}  from "@react-navigation/native";
 import MainStack from "./src/Routes/MainStack";
 import SplashScreen  from './src/components/SplashScreen';
+import { TaskProvider } from './src/contexts';
 
 
 export default function App() {
@@ -21,13 +22,25 @@ export default function App() {
   }
 
   return (
-   
+
+
+    
+
     <NavigationContainer>
+      <TaskProvider value={{}}>
+
       <StatusBar barStyle={'light-content'} backgroundColor='#333' />
         
           <MainStack />
+
+
         
+      </TaskProvider>
       </NavigationContainer>
+
+
+
+  
     
   
   );

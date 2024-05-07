@@ -15,7 +15,7 @@ export default function Jobs() {
   const user: User = {
     name: 'Thiago',
     email: 'thumbnail@thumbnail',
-    type: 'basic',
+    type: 'pro',
   };
 
   // Renderização condicional baseada no tipo de usuário

@@ -9,12 +9,14 @@ import React, { useState } from 'react';
 import TechLIst from '../../components/TechLIst';
 import ListEmpty from '../../components/ListEmpty';
 import { useNavigation } from '@react-navigation/native';
+import { useNameContext } from '../../contexts';
 
 export default function Profile() {
   const navigation = useNavigation();
-  const [name, setName] = useState('Thiago morgados')
-  const [myStack, setMyStack] = useState(['full Stack', 'Front End', 'Mobile Stack',])
+  const {name, stack}  = useNameContext();
+
   const [myskills, setMySkills] = useState<any[]>([])
+  
   function handleBackScreen() {
     navigation.goBack()
   }
@@ -47,7 +49,7 @@ export default function Profile() {
             />
           </View>
           <Text style={styles.userText}>Dev: {name}  </Text>
-          <Text style={styles.userText}>Stack: {myStack[0]}</Text>
+          <Text style={styles.userText}>Stack: {stack}</Text>
         </View>
     </View>
     
